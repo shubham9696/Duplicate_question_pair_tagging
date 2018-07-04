@@ -5,12 +5,12 @@ import os,sys
 class baseline_nn(object):
     def __init__(self,seq_len,num_classes,pretrained_embeddings):
 
-        self.x1=tf.placeholder(tf.int32,[None,seq_len],name='x1')
-        self.x2=tf.placeholder(tf.int32,[None,seq_len],name='x2')
-        self.dropout_prob=tf.placeholder(tf.float32,name='drop')
-        self.y=tf.placeholder(tf.float32,[None,num_classes],name='labels')
-        self.x1_length=tf.placeholder(tf.int32,[None],name='len1')
-        self.x2_length=tf.placeholder(tf.int32,[None],name='len2')
+        self.input_x1 = tf.placeholder(tf.int32, [None, seq_len], name='x1')
+        self.input_x2 = tf.placeholder(tf.int32, [None, seq_len], name='x2')
+        self.input_y = tf.placeholder(tf.float32, [None, num_classes], name='labels')
+        self.drop_prob = tf.placeholder(tf.float32, name='dropout')
+        self.x1_len = tf.placeholder(tf.int32, [None])
+        self.x2_len = tf.placeholder(tf.int32, [None])
 
 
         word_embeddings=tf.Variable(pretrained_embeddings)
