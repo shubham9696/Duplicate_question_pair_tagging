@@ -7,7 +7,7 @@ class baseline_nn(object):
 
         self.x1=tf.placeholder(tf.int32,[None,seq_len],name='x1')
         self.x2=tf.placeholder(tf.int32,[None,seq_len],name='x2')
-        self.dropout_prob=tf.placeholder(tf.float32,[None],name='drop')
+        self.dropout_prob=tf.placeholder(tf.float32,name='drop')
         self.y=tf.placeholder(tf.float32,[None,num_classes],name='labels')
         self.x1_length=tf.placeholder(tf.int32,[None],name='len1')
         self.x2_length=tf.placeholder(tf.int32,[None],name='len2')
