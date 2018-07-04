@@ -21,7 +21,7 @@ class baseline_nn(object):
         r1=tf.reduce_mean(x1_embeddings,axis=1)
         r2=tf.reduce_mean(x2_embeddings,axis=1)
 
-        features=tf.concat([r1,r2,r-r2,tf.multiply(r1,r2)],1)
+        features=tf.concat([r1,r2,r-r2,tf.multiply(r1,r2)],axis=1)
 
         output=tf.contrib.layers.fully_connected(features,num_classes,activation_fn=None)
         predict=tf.nn.softmax(output)
