@@ -15,7 +15,7 @@ class baseline_nn(object):
 
         word_embeddings=tf.Variable(pretrained_embeddings)
 
-        x1_embeddings=tf.nn.embedding_lookup(word_embeddings,self.x1)
+        x1_embeddings=tf.nn.embedding_lookup(word_embeddings,self.input_x1)
         x2_embeddings=tf.nn.embedding_lookup(word_embeddings,self.x2)
 
         r1=tf.reduce_mean(x1_embeddings,axis=1)
