@@ -54,7 +54,7 @@ class siamesecnn(object):
             self.predictions=tf.argmax(self.scores,1,name='predictions')
 
         with tf.name_scope('loss'):
-            losses=tf.nn.softmax_cross_entropy_with_logits(logits=self.scores,self.input_y)
+            losses=tf.nn.softmax_cross_entropy_with_logits(logits=self.scores,labels=self.input_y)
             self.loss=tf.reduce_mean(losses)+l2_reg*l2_loss
 
         with tf.name_scope('accuracy'):
