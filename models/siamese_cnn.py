@@ -8,8 +8,8 @@ class siamesecnn(object):
 
         self.input_x1=tf.placeholder(tf.int32,[None,seq_len],name='x1')
         self.input_x2=tf.placeholder(tf.int32,[None,seq_len],name='x2')
-        self.input_y=tf.placeholder(tf.float32,[None,num_classes],name='labels')
         self.drop_prob=tf.placeholder(tf.float32,name='dropout')
+        self.input_y=tf.placeholder(tf.float32,[None,num_classes],name='labels')
         self.x1_len=tf.placeholder(tf.int32,[None],name='x1_len')
         self.x2_len=tf.placeholder(tf.int32,[None],name='x2_len')
 
