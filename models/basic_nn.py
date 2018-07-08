@@ -35,7 +35,7 @@ class baseline_nn(object):
             self.loss=tf.reduce_mean(loss_vec)
 
         with tf.name_scope('accuracy'):
-            self.y_label=tf.argmax(self.y,1)
+            self.y_label=tf.argmax(self.y,1,name='y_truth')
             correct_predict=tf.equal(self.predictions,self.y_label)
             self.accuracy=tf.reduce_mean(tf.cast(correct_predict,'float'),name='accuracy')
 
