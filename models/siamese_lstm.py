@@ -9,10 +9,9 @@ class siameselstm(object):
         self.input_x1=tf.placeholder(tf.int32,[None,seq_len],name='x1')
         self.input_x2=tf.placeholder(tf.int32,[None,seq_len],name='x2')
         self.input_y=tf.placeholder(tf.float32,[None,num_classes],name='labels')
-        self.drop_prob=tf.placeholder(tf.float32,name='dropout')
         self.x1_len=tf.placeholder(tf.int32,[None])
         self.x2_len=tf.placeholder(tf.int32,[None])
-
+        self.drop_prob=tf.placeholder(tf.float32,name='dropout')
 
         l2_loss=tf.constant(0.0)
 
