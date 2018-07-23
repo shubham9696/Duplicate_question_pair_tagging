@@ -101,11 +101,3 @@ class siamese_cnnlstm(object):
 
         return h_drop
 
-
-
-
-
-
-
-
-
